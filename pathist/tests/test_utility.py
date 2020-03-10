@@ -8,3 +8,6 @@ class TestUtilityFunctinos(unittest.TestCase):
         self.assertIsNone(utility.ac_size_modifier("ego"))
         with self.assertRaises(ValueError):
             utility.ac_size_modifier(42)
+
+if __name__ == '__main__':
+    unittest.main()

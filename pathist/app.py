@@ -4,7 +4,7 @@ from pathist.common import armor_class
 def run():
     print(utility.ac_size_modifier("Large"))
 
-    ac = armor_class.ArmorClass(6, 3, 2)
+    ac = armor_class.ArmorClass(7, natural_armor=3, dexterity_modifier=2)
 
     print("AC: {}, Touch: {}, FF: {}".format(ac.ac, ac.touch, ac.flat_footed))
 
