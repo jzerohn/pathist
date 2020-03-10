@@ -1,7 +1,23 @@
+import random
+import string
+
 class Character:
 
-    def __init__ (self, name):
-        self.name = name
+    def __init__ (self, name = None):
+        self._id = self.__random_id(12)
 
-    def print(self):
-        return "My name is {}".format(self.name)
+        if not name:
+            self._name = self._id
+        else:
+            self._name = name
+
+    @property
+    def id(self):
+        return self._id
+
+    @property
+    def name(self):
+        return self._name
+
+    def __random_id(self, size):
+        return ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(size))
