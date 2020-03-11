@@ -1,5 +1,6 @@
 from math import floor
 from pathist.common.abilities_enum import CoreAbility
+from pathist.common import utility
 
 class Ability:
 
@@ -8,7 +9,7 @@ class Ability:
             raise TypeError("stat must be from Enum CoreAbility")
 
         self._modifier = None
-        self._stat = stat        
+        self._stat = utility.stat_from_core_ability(stat)  
         self.value = value
 
     @property

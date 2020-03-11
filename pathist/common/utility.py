@@ -1,3 +1,5 @@
+from pathist.common.abilities_enum import CoreAbility
+
 def ac_size_modifier(size):
     if not isinstance(size, str):
         raise ValueError('size must be a string indicating size class')
@@ -13,3 +15,18 @@ def ac_size_modifier(size):
     }
 
     return switch.get(size, None)
+
+def stat_from_core_ability(core_ability):
+    if not isinstance(core_ability, CoreAbility):
+        raise TypeError('core_ability must be of class CoreAbility')
+
+    switch = {
+        CoreAbility.ST: "STR",
+        CoreAbility.KO: "CON",
+        CoreAbility.GE: "DEX",
+        CoreAbility.IN: "INT",
+        CoreAbility.WI: "WIS",
+        CoreAbility.CH: "CHA"
+    }
+
+    return switch.get(core_ability, None)

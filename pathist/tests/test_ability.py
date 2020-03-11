@@ -4,9 +4,14 @@ from pathist.common.abilities_enum import CoreAbility
 
 class TestAttributeMethods(unittest.TestCase):
 
+    # Old test before conversion to string rep
+    # def test_attribute_stat_getter(self):
+    #     a = ability.Ability(CoreAbility.ST, 19)
+    #     self.assertEqual(a.stat, CoreAbility.ST)
+
     def test_attribute_stat_getter(self):
         a = ability.Ability(CoreAbility.ST, 19)
-        self.assertEqual(a.stat, CoreAbility.ST)
+        self.assertEqual(a.stat, "STR")
 
     def test_attribute_stat_assertion(self):
         with self.assertRaises(Exception):

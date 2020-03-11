@@ -23,6 +23,5 @@ class TestArmorClassMethods(unittest.TestCase):
         with self.assertRaises(ValueError):
             ArmorClass(-1)
 
-
 if __name__ == '__main__':
     unittest.main()
